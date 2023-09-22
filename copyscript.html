@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy KongerHub Script</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1151974100860936193/1154593904906227712/C.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a0a0a; /* Background color set to #0a0a0a */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px; /* Adjust the width as needed */
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Copy to Clipboard</h1>
+        <p>KongerHub Roblox Exploit. Once you have clicked the "Copy" Button you have copied the KongerHub loader to your clipboard</p>
+        <button id="copyButton">Copy Script</button>
+    </div>
+
+    <script>
+        document.getElementById("copyButton").addEventListener("click", function() {
+            // Text to copy
+            var textToCopy = 'loadstring(game:GetObjects("rbxassetid://14713089094")[1].Source)()';
+
+            // Create a temporary input element
+            var input = document.createElement("input");
+            input.setAttribute("value", textToCopy);
+
+            // Append the input element to the document
+            document.body.appendChild(input);
+
+            // Select the text in the input element
+            input.select();
+
+            // Copy the selected text to the clipboard
+            document.execCommand("copy");
+
+            // Remove the temporary input element
+            document.body.removeChild(input);
+
+            // Notify the user that the text has been copied
+            alert("Script copied to clipboard.");
+        });
+    </script>
+</body>
+</html>
