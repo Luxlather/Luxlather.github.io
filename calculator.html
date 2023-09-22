@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1004485389978976256/1154866270047588382/C.png">
     <style>
         /* Apply a CSS fade-in animation */
         @keyframes fadeIn {
@@ -23,14 +25,16 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-color: #1f1f1f; /* Dark background color */
+            color: #fff; /* Light text color */
             animation: fadeIn 1s ease; /* Apply the fade-in animation to the body */
         }
 
         #calculator {
             width: 300px;
             padding: 20px;
-            background-color: #f2f2f2;
-            border: 1px solid #ccc;
+            background-color: #333; /* Darker calculator background */
+            border: 1px solid #555; /* Darker border color */
             border-radius: 5px;
             display: flex;
             flex-direction: column;
@@ -41,6 +45,14 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
+            background-color: #444; /* Slightly darker textbox background */
+            color: #fff; /* Light text color */
+            border: none;
+            border-radius: 5px;
+            /* Adjust the placeholder text color */
+            ::placeholder {
+                color: #ccc; /* Light gray placeholder text */
+            }
         }
 
         /* Adjust the button styles to be side by side */
@@ -60,7 +72,7 @@
             padding: 10px;
             font-size: 16px;
             background-color: #4CAF50;
-            color: white;
+            color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
