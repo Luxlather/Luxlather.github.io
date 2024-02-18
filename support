@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KongerHub Support</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1176964545567277156/1208570306176884797/icons8-technical-support-64.png?ex=65e3c3cf&is=65d14ecf&hm=fb1ffa4d64669be3cd7acac16c43ab17f5e28af23205eb9d5ff9a24f031d3fa4&">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #content {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        textarea {
+            width: calc(100% - 20px);
+            height: 100px;
+            margin-top: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #333;
+            border-radius: 5px;
+            resize: none;
+            background-color: #fff;
+            color: #333; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content">
+        <h1>Contact KongerHub Support</h1>
+
+        <p>Feel free to send us an email if you need help or have any questions!</p>
+
+        <label for="emailBody">State the issue or comment here:</label>
+        <textarea id="emailBody" placeholder="Type your message here..."></textarea>
+
+        <button onclick="sendEmail()">Send Email</button>
+    </div>
+
+    <script>
+        function sendEmail() {
+            var emailAddress = 'thebestdogwatergamer@gmail.com';
+            var subject = 'KongerHub Support';
+            var body = document.getElementById('emailBody').value;
+
+            var mailtoLink = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+            window.location.href = mailtoLink;
+        }
+    </script>
+
+</body>
+</html>
