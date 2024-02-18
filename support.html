@@ -66,7 +66,7 @@
 
         <p>Feel free to send us an email if you need help or have any questions!</p>
 
-        <label for="emailBody">State the issue or comment here:</label>
+        <label for="emailBody">State the issue, comment, or question here:</label>
         <textarea id="emailBody" placeholder="Type your message here..."></textarea>
 
         <button onclick="sendEmail()">Send Email</button>
@@ -74,8 +74,8 @@
 
     <script>
         function sendEmail() {
-            var emailAddress = 'thebestdogwatergamer@gmail.com';
-            var subject = 'KongerHub Support';
+            var emailAddress = 'KongerHub@gmail.com';
+            var subject = 'KongerHub Technical Support';
             var body = document.getElementById('emailBody').value;
 
             var mailtoLink = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
