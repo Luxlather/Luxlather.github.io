@@ -8,81 +8,119 @@
 
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'GothamSSm', sans-serif;
             background-color: #181818;
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
         }
 
         #content {
             max-width: 600px;
-            padding: 20px;
+            padding: 30px;
             background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
         }
 
         h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+            border: 1px solid #4CAF50;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #535353;
             color: #ffffff;
+            font-size: 16px;
+            font-family: 'GothamSSm', sans-serif;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #a0a0a0;
+        }
+
+        button, input[type="reset"] {
+            width: 48%;
+            padding: 15px;
+            height: 50px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover, input[type="reset"]:hover {
+            background-color: #45a049;
         }
 
         button {
-            padding: 10px 20px;
-            background-color: #555;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
+            margin-right: 4%;
         }
 
-        button:hover {
-            background-color: #444;
-        }
-
-        textarea {
-            width: calc(100% - 20px);
-            height: 100px;
-            margin-top: 10px;
-            padding: 10px;
-            box-sizing: border-box;
-            border: 1px solid #333;
-            border-radius: 5px;
-            resize: none;
-            background-color: #535353;
-            color: #ffffff; 
-        }
-
-        textarea::placeholder {
-            color: #ffffff;
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
     </style>
 </head>
 <body>
 
     <div id="content">
-        <h1>Contact KongerHub Support</h1>
+        <h1>Contact KongerHub Staff Team</h1>
 
-        <p>Feel free to send us an email if you need help or have any questions!</p>
+        <p>Feel free to send us an if you're experiencing issue are just have questions!</p>
 
-        <label for="emailBody">State the issue, comment, or question here:</label>
-        <textarea id="emailBody" placeholder="Type your message here..."></textarea>
+        <form>
+            <label for="discordTag">Discord Tag:</label>
+            <input type="text" id="discordTag" placeholder="Your Discord Username">
 
-        <button onclick="sendEmail()">Send Email</button>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" placeholder="Support Inquiry">
+
+            <label for="emailBody">Message:</label>
+            <textarea id="emailBody" placeholder="Type your message here..."></textarea>
+
+            <button type="button" onclick="sendEmail()">Send Email</button>
+            <input type="reset" value="Reset">
+        </form>
     </div>
 
     <script>
         function sendEmail() {
+            var discordTag = document.getElementById('discordTag').value;
+            var subject = document.getElementById('subject').value;
             var emailAddress = 'KongerHub@gmail.com';
-            var subject = 'KongerHub Technical Support';
-            var body = document.getElementById('emailBody').value;
+            var emailSubject = 'KongerHub Support - ' + subject;
+            var body = 'Discord Tag: ' + discordTag + '\nSubject: ' + subject + '\n\n' + document.getElementById('emailBody').value;
 
-            var mailtoLink = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            var mailtoLink = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(emailSubject) + '&body=' + encodeURIComponent(body);
 
             window.location.href = mailtoLink;
         }
